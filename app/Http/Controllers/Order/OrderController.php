@@ -111,8 +111,8 @@ class OrderController extends Controller
             $this->orderStatus();
 
             $orderData = [
-                'shipping_option' => $request->get('shipping_option'),
-                'payment_option' => $request->get('payment_option'),
+                'shipping_option' => $request->get('shipping_option') ?? 'pickup',
+                'payment_option' => $request->get('payment_option') ?? 'cach',
                 'order_status_id' => $this->orderStatus->id,
                 'currency_id' => $this->getCurrency()->id,
                 'customer_id' => $this->customer->id,
@@ -123,10 +123,11 @@ class OrderController extends Controller
             $this->syncProducts($order, $request);
             Cart::clear();
 
-            return redirect()
-                ->route('order.successful', $order->id)
-                ->with('success', 'Order Placed Successfuly!');
+            return view('checkout.payment', compact('order'));
         } catch (\Exception $e) {
+            \Log::error($e);
+            dd($e);
+
             return redirect()->back()
                 ->withInput()
                 ->withErrors(['General error!']);

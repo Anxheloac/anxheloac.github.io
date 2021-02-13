@@ -29,6 +29,7 @@ Vue.component('account-upload', require('../components/account/AccountUpload.vue
 Vue.component('category-page', require('../components/CategoryPage.vue').default)
 Vue.component('product-page', require('../components/ProductPage.vue').default)
 Vue.component('checkout-page', require('../components/CheckoutPage.vue').default)
+Vue.component('payment-page', require('../components/PaymentPage.vue').default)
 Vue.component('cart-page', require('../components/CartPage.vue').default)
 Vue.component('avored-layout', require('../components/layout/Layout.vue').default)
 Vue.component('login-fields', require('../components/auth/LoginFields.vue').default)

@@ -31,6 +31,8 @@ Route::delete('destroy-cart', 'Cart\CartController@destroy')->name('cart.destroy
 Route::put('update-cart', 'Cart\CartController@update')->name('cart.update');
 
 Route::get('checkout', 'Checkout\CheckoutController@show')->name('checkout.show');
+Route::get('payment', 'Payment\PaymentController@showForm')->name('payment.show_form');
+Route::post('payment', 'Payment\PaymentController@pay')->name('payment.make_purchase');
 Route::post('order', 'Order\OrderController@place')->name('order.place');
 
 Route::get('order/{order}', 'Order\OrderController@successful')->name('order.successful');

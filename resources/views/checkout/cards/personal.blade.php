@@ -6,6 +6,7 @@
                 <avored-input
                     label-text="{{ __('avored.fields.first_name') }}"
                     field-name="first_name"
+                    init-value="{{ old('first_name', '') }}"
                     error-text="{{ $errors->first('first_name') }}"
                 >
                 </avored-input>
@@ -16,6 +17,7 @@
                 <avored-input
                     label-text="{{ __('avored.fields.last_name') }}"
                     field-name="last_name"
+                    init-value="{{ old('last_name', '') }}"
                     error-text="{{ $errors->first('last_name') }}"
                 >
                 </avored-input>
@@ -29,6 +31,7 @@
             <avored-input
                 label-text="{{ __('avored.fields.email') }}"
                 field-name="email"
+                init-value="{{ old('email', '') }}"
                 error-text="{{ $errors->first('email') }}"
             >
             </avored-input>

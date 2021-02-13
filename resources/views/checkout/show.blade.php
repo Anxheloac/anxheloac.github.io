@@ -21,6 +21,7 @@
 @section('content')
   <checkout-page 
     :items="{{ Cart::toArray() }}"
+    :oldValues="{{ json_encode(session()->getOldInput()) }}"
     :addresses="{{ $addresses }}"
     inline-template>
     <div class="container mx-auto">
