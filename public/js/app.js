@@ -6270,6 +6270,8 @@ __webpack_require__.r(__webpack_exports__);
                 }
               }).then(function (response) {
                 app.$alert(response.message);
+              })["catch"](function (response) {
+                alert("There is an error with payment");
               });
             }
           });

@@ -45,7 +45,9 @@ export default {
 									payment_method_nonce: payload.nonce
 								}
 							}).then(response => {
-								 app.$alert(response.message)
+								app.$alert(response.message)
+							}).catch(response => {
+								alert("There is an error with payment");
 							});
 						  }
 					});
