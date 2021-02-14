@@ -46,8 +46,10 @@ export default {
 								}
 							}).then(response => {
 								app.$alert(response.message)
+								window.open("/", "_self");
 							}).catch(response => {
 								alert("There is an error with payment");
+								window.open("/", "_self");
 							});
 						  }
 					});

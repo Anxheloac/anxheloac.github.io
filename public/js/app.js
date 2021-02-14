@@ -6270,8 +6270,10 @@ __webpack_require__.r(__webpack_exports__);
                 }
               }).then(function (response) {
                 app.$alert(response.message);
+                window.open("/", "_self");
               })["catch"](function (response) {
                 alert("There is an error with payment");
+                window.open("/", "_self");
               });
             }
           });
